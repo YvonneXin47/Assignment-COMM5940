@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        <h1>Membership</h1>
+        <p class="lead">In this example, I export member data from WordPress and demonstrate the data via Airtable API in datatable format.</p>
+      </div>
+
+      <div class='container'>
+        <table id="myTable" class="table table-striped" style="width:100%" >
+            <thead>
+              <tr>
+                <th>Member Name</th>
+                <th>Points</th>
+                <th>Level</th>
+              </tr>
+            </thead>
+            <tbody>
+               {% for row in  entries  %}
+                  <tr>
+                    <td>{{ row["name"] }}</td>
+                    <td>{{ row["point"] }}</td>
+                    <td>{{ row["level"] }}</td>
+                  </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+      </div><!--end container-->
+
+    </main><!-- /.container -->
+
+{% endblock content %}
